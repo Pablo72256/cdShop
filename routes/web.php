@@ -15,12 +15,12 @@ use App\Http\Controllers\MainController;
 |
 */
 
+Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', [App\Http\Controllers\InicioController::class, 'inicio'])->name('inicio');
 Route::get('/nosotros', [App\Http\Controllers\InicioController::class, 'nosotros'])->name('nosotros');
 Route::get('/contacto', [App\Http\Controllers\InicioController::class, 'contacto'])->name('contacto');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('articulos', 'App\Http\Controllers\ArticuloController');
