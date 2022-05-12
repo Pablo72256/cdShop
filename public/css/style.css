@@ -1,0 +1,8 @@
+* {
+    box-sizing: border-box;
+}
+
+.container-fluid {
+    width: 90%;
+    margin: 0 auto;
+}
