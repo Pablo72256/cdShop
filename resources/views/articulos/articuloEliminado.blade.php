@@ -10,8 +10,8 @@
 @endsection
 
 @section('content')
-
-    <h2>Libro: <?php echo $_SESSION['carrito'][$articulo]['titulo'] ?> Se ha eliminado del carrito</h2>
+    <?php $articulo = $articulo['id'] - 1;?>
+    <h2>Articulo: <?php echo $_SESSION['carrito'][$articulo]['nombre'] ?> Se ha eliminado del carrito</h2>
     <hr/>
     <div class="row">
         <div class="col-sm-2">
@@ -23,18 +23,24 @@
         <div class="col-sm-2">
             <strong class="text-danger">TITULO: </strong>
         </div>
-        <div class="col-sm-10"> <?php echo $_SESSION['carrito'][$articulo]['titulo'] ?> </div>
+        <div class="col-sm-10"> <?php echo $_SESSION['carrito'][$articulo]['nombre'] ?> </div>
     </div> <div class="row">
         <div class="col-sm-2">
             <strong class="text-danger">AUTOR: </strong>
         </div>
-        <div class="col-sm-10"> <?php echo $_SESSION['carrito'][$articulo]['autor'] ?> </div>
+        <div class="col-sm-10"> <?php echo $_SESSION['carrito'][$articulo]['artista'] ?> </div>
     </div>
     <div class="row">
         <div class="col-sm-2">
             <strong class="text-danger">PRECIO: </strong>
         </div>
         <div class="col-sm-10"> <?php echo $_SESSION['carrito'][$articulo]['precio']?> </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <strong class="text-danger">CATEGORIA: </strong>
+        </div>
+        <div class="col-sm-10"> <?php echo $_SESSION['carrito'][$articulo]['categoria']?> </div>
     </div>
     <hr/>
     <h2>

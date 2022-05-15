@@ -11,7 +11,7 @@
                     <h5 class="card-title"><u>CD´s</u></h5>
                     <p class="card-text">Dentro de nuestra web podras acceder a un amplio catalogo para adquirir los CD´s que más te gusten, además podrás encontrar colecciones de los mejores éxitos y por supuesto una gran variada de vinilos, que desearás tener en tu casa.</p>
                     <div class="text-center">
-                        <a href="XXX" class="btn btn-outline-primary">Catálogo de CD´s</a>
+                        <a href="{{ url('/articulos') }}" class="btn btn-outline-primary">Catálogo de CD´s</a>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <img class="card-img-top" src="{{URL::asset('img/inicio/inicioVinilos.jpg')}}" alt="imagen_tarjeta">
                 <div class="card-body">
                     <h5 class="card-title"><u>Contáctanos</u></h5>
-                    <p class="card-text">Dentro de nuestra web podras acceder a un amplio catalogo para adquirir el libro que más te guste para poder adquirirlo en el momento y elegir si quieres que te lo lleven a casa, si no estremos encantados de que vengas a recoger tu pedido a nuestra tienda, donde además te resolveremos cualquier duda.</p>
+                    <p class="card-text">Dentro de nuestra web podras acceder a un amplio catalogo para adquirir el CD que más te guste para poder adquirirlo en el momento y elegir si quieres que te lo lleven a casa, si no estremos encantados de que vengas a recoger tu pedido a nuestra tienda, donde además te resolveremos cualquier duda.</p>
                     <div class="text-center">
                         <a href="{{ route('contacto') }}" class="btn btn-outline-primary">Contáctanos</a>
                     </div>

@@ -23,4 +23,7 @@ Route::get('/', [App\Http\Controllers\InicioController::class, 'inicio'])->name(
 Route::get('/nosotros', [App\Http\Controllers\InicioController::class, 'nosotros'])->name('nosotros');
 Route::get('/contacto', [App\Http\Controllers\InicioController::class, 'contacto'])->name('contacto');
 
-Route::resource('articulos', 'App\Http\Controllers\ArticuloController');
+Route::resource('articulos', 'App\Http\Controllers\ArticuloController')->middleware('auth');
+
+Route::get('/carrito', [App\Http\Controllers\CarritoController::class, 'carrito'])->name('carrito')->middleware('auth');
+

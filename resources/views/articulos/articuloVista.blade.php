@@ -32,9 +32,8 @@
                 <th>Imagen</th>
                 <th>Nombre</th>
                 <th>Artista</th>
-                <th>Precio</th>
                 <th>Categoria</th>
-                <th>Stock</th>
+                <th>Precio</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -47,9 +46,8 @@
                     <td><img src="<?php $ruta = "img/articulos/{$articulo->foto}.png"; echo $ruta; ?>" alt="caratula"></td>
                     <td class="h5 pt-5">{{ $articulo->nombre }}</td>
                     <td class="h5 pt-5">{{ $articulo->artista }}</td>
-                    <td class="text-nowrap h5 pt-5">{{ $articulo->precio }}</td>
                     <td class="text-nowrap h5 pt-5">{{ $articulo->categoria }}</td>
-                    <td class="text-nowrap h5 pt-5">{{ $articulo->stock }}</td>
+                    <td class="text-nowrap h5 pt-5">{{ $articulo->precio }}</td>
                     <td class="h5 pt-5">
                         <form action="{{ route('articulos.show', ['articulo'=>$articulo])}}" method="GET">
                             <button type="submit" class="btn btn-outline-success" name="añadirArticulo">Añadir al carrito</button>
