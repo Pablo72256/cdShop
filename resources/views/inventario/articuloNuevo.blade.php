@@ -1,0 +1,67 @@
+@extends('layouts.app')
+@section('content')
+    <h1>Gestión de inventario</h1>
+    <hr/>
+    <div class="container-fluid px-5">
+        <form action="{{ route('inventario.store') }}" method="post">
+            @csrf
+            <legend>Nuevo Artítulo</legend>
+            <div class="row mt-4">
+                <div class="input-field col-sm-12">
+                    <label for="form_foto">Nombre de la foto</label>
+                    <input type="text" name="form_foto" id="form_foto" class="form-control" />
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="input-field col-sm-12">
+                    <label for="form_nombre">Nombre</label>
+                    <input type="text" name="form_nombre" id="form_nombre" class="form-control" />
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="input-field col-sm-12">
+                    <label for="form_artista">Artista</label>
+                    <input type="text" name="form_artista" id="form_artista" class="form-control" />
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="input-field col-sm-12">
+                    <label for="form_stock">Stock</label>
+                    <input type="number" name="form_stock" min="0" step="1" id="form_stock" class="form-control" />
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="input-field col-sm-12">
+                    <label for="form_categoria">Categoria</label>
+                    <input type="text" name="form_categoria" id="form_categoria" class="form-control" />
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="input-field col-sm-12">
+                    <label for="form_precio">Precio</label>
+                    <input type="number" name="form_precio" id="form_precio" class="form-control" min="0.01" step="0.01" />
+                </div>
+            </div>
+            <div class="row mt-4"> <div class="input-field col-sm-6 text-lg-end">
+                <input type="submit" class="btn btn-primary" value="Enviar" /></div>
+                <div class="input-field col-sm-6 text-lg-start">
+                    <input type="reset" class="btn btn-danger" value="Borrar" />
+                </div>
+            </div>
+        </form>
+    </div>
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -25,5 +25,7 @@ Route::get('/contacto', [App\Http\Controllers\InicioController::class, 'contacto
 
 Route::resource('articulos', 'App\Http\Controllers\ArticuloController')->middleware('auth');
 
+Route::resource('inventario', 'App\Http\Controllers\InventarioController')->middleware('auth');
+
 Route::get('/carrito', [App\Http\Controllers\CarritoController::class, 'carrito'])->name('carrito')->middleware('auth');
 

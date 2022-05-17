@@ -44,6 +44,18 @@
                 <a class="navbar-brand" href="{{ url('/contacto') }}">
                     {{ config('Contacto', 'Contacto') }}
                 </a>
+                <?php
+                if(auth()->user()){
+                    if(auth()->user()->type === 'admin'){
+                        echo "
+                        <a class='navbar-brand' href=". url('/inventario') .">
+                            ". config('Inventario', 'Inventario') ."
+                        </a>
+                        ";
+                    }
+                }
+
+                ?>
                 <a class="navbar-brand bg-white text-black px-4 rounded-pill" href="{{ url('/carrito') }}">
                     <span class="material-icons pt-2">shopping_cart</span>
                 </a>
