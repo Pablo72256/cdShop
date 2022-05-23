@@ -12,18 +12,6 @@
 
 @section('content')
 
-    @if (isset($_REQUEST['comprar']))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Pedido realizado correctamente</strong>, en breves recibiras el paquete a la direccion de envio que figura en tu cuenta.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <?php
-            $_SESSION['carrito'] = array();
-            session_destroy();
-        ?>
-
-    @endif
-
     <h1>Catálogo de Articulos</h1>
     <table id="tablaArticulos" class="table table-striped">
         <thead class='bg-secondary text-white'>

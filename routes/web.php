@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\TransbankController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,5 @@ Route::resource('inventario', 'App\Http\Controllers\InventarioController')->midd
 
 Route::get('/carrito', [App\Http\Controllers\CarritoController::class, 'carrito'])->name('carrito')->middleware('auth');
 
+Route::get('/iniciar_compra', [TransbankController::class, 'iniciar_compra']);
+Route::get('/confirmar_pago', [TransbankController::class, 'confirmar_pago'])->name('confirmar_pago');

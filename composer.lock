@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b48e51cf2e3a84d07f63a74dc5cb6852",
+    "content-hash": "07f5e545f891336b5f6e5ba393d47bfe",
     "packages": [
         {
             "name": "brick/math",
@@ -4927,6 +4927,57 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.4"
             },
             "time": "2021-12-08T09:12:39+00:00"
+        },
+        {
+            "name": "transbank/transbank-sdk",
+            "version": "2.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TransbankDevelopers/transbank-sdk-php.git",
+                "reference": "e408a922d7b7c5db00ba98cb6d3997fbcd6b3612"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TransbankDevelopers/transbank-sdk-php/zipball/e408a922d7b7c5db00ba98cb6d3997fbcd6b3612",
+                "reference": "e408a922d7b7c5db00ba98cb6d3997fbcd6b3612",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "guzzlehttp/guzzle": "^5|^6|^7",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "dms/phpunit-arraysubset-asserts": "^0.2.1",
+                "phpunit/phpunit": "^9",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Transbank\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Transbank SDK",
+            "keywords": [
+                "api",
+                "payments",
+                "sdk",
+                "transbank"
+            ],
+            "support": {
+                "issues": "https://github.com/TransbankDevelopers/transbank-sdk-php/issues",
+                "source": "https://github.com/TransbankDevelopers/transbank-sdk-php/tree/2.0.9"
+            },
+            "time": "2022-04-21T17:03:24+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

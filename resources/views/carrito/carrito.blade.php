@@ -145,9 +145,7 @@
                                             <?php
                                                 if (isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0 ){
                                             ?>
-                                            <form action="XXX" method="GET">
-                                                <button type="submit" class="btn btn-outline-success" name="comprar">Comprar</button>
-                                            </form>
+                                                <a href="{{ url('/iniciar_compra') }}" class="btn btn-outline-success">Pagar</a>
                                             <?php
                                                 }
                                             ?>
