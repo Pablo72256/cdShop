@@ -32,41 +32,41 @@
     <div id="app">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('Inicio', 'Inicio') }}
-                </a>
-                <a class="navbar-brand" href="{{ url('/articulos') }}">
-                    {{ config('Articulos', 'Articulos') }}
-                </a>
-                <a class="navbar-brand" href="{{ url('/nosotros') }}">
-                    {{ config('Nosotros', 'Nosotros') }}
-                </a>
-                <a class="navbar-brand" href="{{ url('/contacto') }}">
-                    {{ config('Contacto', 'Contacto') }}
-                </a>
-                <?php
-                if(auth()->user()){
-                    if(auth()->user()->type === 'admin'){
-                        echo "
-                        <a class='navbar-brand' href=". url('/inventario') .">
-                            ". config('Inventario', 'Inventario') ."
-                        </a>
-                        ";
-                    }
-                }
-
-                ?>
                 <a class="navbar-brand bg-white text-black px-4 rounded-pill" href="{{ url('/carrito') }}">
                     <span class="material-icons pt-2">shopping_cart</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            {{ config('Inicio', 'Inicio') }}
+                        </a>
+                        <a class="navbar-brand" href="{{ url('/articulos') }}">
+                            {{ config('Articulos', 'Articulos') }}
+                        </a>
+                        <a class="navbar-brand" href="{{ url('/nosotros') }}">
+                            {{ config('Nosotros', 'Nosotros') }}
+                        </a>
+                        <a class="navbar-brand" href="{{ url('/contacto') }}">
+                            {{ config('Contacto', 'Contacto') }}
+                        </a>
+                        <a class="navbar-brand" href="{{ url('/pedidos') }}">
+                            {{ config('Pedidos', 'Pedidos') }}
+                        </a>
+                        <?php
+                            if(auth()->user()){
+                                if(auth()->user()->type === 'admin'){
+                                    echo "
+                                    <a class='navbar-brand' href=". url('/inventario') .">
+                                        ". config('Inventario', 'Inventario') ."
+                                    </a>
+                                    ";
+                                }
+                            }
+                        ?>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

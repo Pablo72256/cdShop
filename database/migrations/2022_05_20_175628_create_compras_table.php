@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('compras', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('session_id');
+            $table->string('pedido');
             $table->float('total', 9, 2);
             $table->tinyInteger('status')->comment('1: pendiente. 2: Aprobada.')->default(1);
-            $table->softDeletes();
+            $table->string('usuario');
             $table->timestamps();
         });
     }

@@ -13,6 +13,7 @@ class TransbankController extends Controller
 {
     public function __construct()
     {
+        $total = 0;
         if ( app()->environment('production') ) {
             WebpayPlus::configureForProduction(
                 env('webpay_plus_cc'),
@@ -26,14 +27,18 @@ class TransbankController extends Controller
     public function iniciar_compra(Request $request){
 
         $total = 0;
+        $pedido = '';
         foreach ($_SESSION['carrito'] as $valor) {
             $total += $valor['precio'] * $valor['cantidad'];
-        }
+            $pedido = $pedido .implode(",", $valor).'&';
+        };
         $totalDolares = round($total * 1.06 , 3) * 1000;
 
         $nueva_compra = new Compra();
-        $nueva_compra->session_id = 123456;
+        $nueva_compra->session_id = 052022;
         $nueva_compra->total = $totalDolares;
+        $nueva_compra->usuario = auth()->user()->email;
+        $nueva_compra->pedido = $pedido;
         $nueva_compra->save();
         $url_to_pay = self::start_web_pay_plys_transaction( $nueva_compra );
         return redirect($url_to_pay);
@@ -56,7 +61,12 @@ class TransbankController extends Controller
         $compra = Compra::where('id', $confirmacion->buyOrder)->first();
 
         if ( $confirmacion->isApproved() ){
+            $total = 0;
+            foreach ($_SESSION['carrito'] as $valor) {
+                $total += $valor['precio'] * $valor['cantidad'];
+            };
             $compra->status = 2;
+            $compra->total = $total;
             $compra->update();
 
             return view('pagos.aprobado');

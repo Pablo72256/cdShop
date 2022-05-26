@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\TransbankController;
+use App\Http\Controllers\PedidosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,6 @@ Route::get('/carrito', [App\Http\Controllers\CarritoController::class, 'carrito'
 
 Route::get('/iniciar_compra', [TransbankController::class, 'iniciar_compra']);
 Route::get('/confirmar_pago', [TransbankController::class, 'confirmar_pago'])->name('confirmar_pago');
+
+Route::get('/pedidos', [PedidosController::class, 'mostrarPedidos'])->name('pedidos')->middleware('auth');
+Route::get('/albaran', [PedidosController::class, 'albaran'])->name('albaran')->middleware('auth');
