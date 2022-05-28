@@ -36,3 +36,5 @@ Route::get('/confirmar_pago', [TransbankController::class, 'confirmar_pago'])->n
 
 Route::get('/pedidos', [PedidosController::class, 'mostrarPedidos'])->name('pedidos')->middleware('auth');
 Route::get('/albaran', [PedidosController::class, 'albaran'])->name('albaran')->middleware('auth');
+
+Route::resource('cuenta', 'App\Http\Controllers\CuentaController')->middleware('auth');

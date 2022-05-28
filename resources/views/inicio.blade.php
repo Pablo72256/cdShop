@@ -1,6 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+
+    @if (isset($usuarioEditado))
+        @if ($usuarioEditado == "Usuario modificado")
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Cuenta modificada correctamente</strong>, en breves recibiras un email en tu cuenta con los cambios.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @else
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error modificar la cuenta</strong>, por favor vuelva a intentarlo.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        
+    @endif
+
     <h1 class="text-center">Bienvenido a CDShop</h1>
     <hr/>
     <div class="row pt-2 d-flex justify-content-center">

@@ -12,7 +12,8 @@
 
 @section('content')
 
-    <h1>Catálogo de Articulos</h1>
+    <h1 class="text-center">Catálogo de Articulos</h1>
+    <hr/>
     <table id="tablaArticulos" class="table table-striped">
         <thead class='bg-secondary text-white'>
             <tr>
