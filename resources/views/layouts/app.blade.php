@@ -53,7 +53,9 @@
                         <a class="navbar-brand" href="{{ url('/contacto') }}">
                             {{ config('Contacto', 'Contacto') }}
                         </a>
-                        
+                        <a class="navbar-brand" href="{{ url('/pedidos') }}">
+                            {{ config('Pedidos', 'Pedidos') }}
+                        </a>
                         <?php
                             if(auth()->user()){
                                 if(auth()->user()->type === 'admin'){
