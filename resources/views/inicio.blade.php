@@ -25,7 +25,7 @@
                 <img class="card-img-top" src="{{URL::asset('img/inicio/inicioCDs.jpg')}}" alt="imagen_tarjeta">
                 <div class="card-body">
                     <h5 class="card-title"><u>CD´s</u></h5>
-                    <p class="card-text">Dentro de nuestra web podras acceder a un amplio catalogo para adquirir los CD´s que más te gusten, además podrás encontrar colecciones de los mejores éxitos y por supuesto una gran variada de vinilos, que desearás tener en tu casa.</p>
+                    <p class="card-text">Dentro de nuestra propia web podras acceder a un amplio catalogo para adquirir los CD´s que más te gusten, además podrás encontrar colecciones de los mejores éxitos y por supuesto una gran variada de vinilos, que desearás tener en tu casa.</p>
                     <div class="text-center">
                         <a href="{{ url('/articulos') }}" class="btn btn-outline-primary">Catálogo de CD´s</a>
                     </div>
