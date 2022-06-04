@@ -14,38 +14,40 @@
 
     <h1 class="text-center">Catálogo de Articulos</h1>
     <hr/>
-    <table id="tablaArticulos" class="table table-striped">
-        <thead class='bg-secondary text-white'>
-            <tr>
-                <th>#</th>
-                <th>Imagen</th>
-                <th>Nombre</th>
-                <th>Artista</th>
-                <th>Categoria</th>
-                <th>Precio</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($articulos as $articulo)
+    <div class="table-responsive">
+        <table id="tablaArticulos" class="table table-striped">
+            <thead class='bg-secondary text-white'>
                 <tr>
-                    <td class="h5 pt-5">
-                        <div class="d-flex justify-content-center"><strong>{{ $articulo->id }}</strong></div>
-                    </td>
-                    <td><img src="<?php $ruta = "img/articulos/{$articulo->foto}.png"; echo $ruta; ?>" alt="caratula"></td>
-                    <td class="h5 pt-5">{{ $articulo->nombre }}</td>
-                    <td class="h5 pt-5">{{ $articulo->artista }}</td>
-                    <td class="text-nowrap h5 pt-5">{{ $articulo->categoria }}</td>
-                    <td class="text-nowrap h5 pt-5">{{ $articulo->precio }}</td>
-                    <td class="h5 pt-5">
-                        <form action="{{ route('articulos.show', ['articulo'=>$articulo])}}" method="GET">
-                            <button type="submit" class="btn btn-outline-success" name="añadirArticulo">Añadir al carrito</button>
-                        </form>
-                    </td>
+                    <th>#</th>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Artista</th>
+                    <th>Categoria</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach ($articulos as $articulo)
+                    <tr>
+                        <td class="h5 pt-5">
+                            <div class="d-flex justify-content-center"><strong>{{ $articulo->id }}</strong></div>
+                        </td>
+                        <td><img src="<?php $ruta = "img/articulos/{$articulo->foto}.png"; echo $ruta; ?>" alt="caratula"></td>
+                        <td class="h5 pt-5">{{ $articulo->nombre }}</td>
+                        <td class="h5 pt-5">{{ $articulo->artista }}</td>
+                        <td class="text-nowrap h5 pt-5">{{ $articulo->categoria }}</td>
+                        <td class="text-nowrap h5 pt-5">{{ $articulo->precio }}</td>
+                        <td class="h5 pt-5">
+                            <form action="{{ route('articulos.show', ['articulo'=>$articulo])}}" method="GET">
+                                <button type="submit" class="btn btn-outline-success" name="añadirArticulo">Añadir al carrito</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 
     @section('js')
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

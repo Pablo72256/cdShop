@@ -25,32 +25,33 @@
                             <a href="{{ route('albaran', ['articulo'=>$pedido->id]) }}" class="btn btn-danger mb-2">Albarán PDF</a>
                         </div>
                     </div>
-                    
-                    <table class="table table-striped mb-5">
-                        <thead class='bg-secondary text-white'>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Artista</th>
-                                <th>Precio</th>
-                                <th>Cantidad</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for($i = 0; $i < count($extraerPedido)-1; $i++)
+                    <div class="table-responsive">
+                        <table class="table table-striped mb-5">
+                            <thead class='bg-secondary text-white'>
                                 <tr>
-                                    <td class="h5">{{ $extraerPedido[$i][1] }}</td>
-                                    <td class="h5">{{ $extraerPedido[$i][2] }}</td>
-                                    <td class="text-nowrap h5">{{ $extraerPedido[$i][3] }}</td>
-                                    <td class="text-nowrap h5">{{ $extraerPedido[$i][4] }}</td>
+                                    <th>Nombre</th>
+                                    <th>Artista</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
                                 </tr>
-                            @endfor
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="5" class="text-end"><h3>Total: {{ $pedido->total }}€</h3></td>
-                            </tr>
-                        </tfoot>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @for($i = 0; $i < count($extraerPedido)-1; $i++)
+                                    <tr>
+                                        <td class="h5">{{ $extraerPedido[$i][1] }}</td>
+                                        <td class="h5">{{ $extraerPedido[$i][2] }}</td>
+                                        <td class="text-nowrap h5">{{ $extraerPedido[$i][3] }}</td>
+                                        <td class="text-nowrap h5">{{ $extraerPedido[$i][4] }}</td>
+                                    </tr>
+                                @endfor
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5" class="text-end"><h3>Total: {{ $pedido->total }}€</h3></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
                 @endforeach
             </div>
         </div>

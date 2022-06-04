@@ -13,69 +13,71 @@
                 <a href="{{ route('inventario.create') }}" class="btn btn-secondary btn-lg">Nuevo artículo</a>
             </div>
 
-            <table id="tablaArticulos" class="table table-striped">
-                <thead class='bg-secondary text-white'>
-                    <tr>
-                        <th>#</th>
-                        <th>Imagen</th>
-                        <th>Nombre</th>
-                        <th>Artista</th>
-                        <th>Categoria</th>
-                        <th>Precio</th>
-                        <th>Stock</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($inventario as $articulo)
+            <div class="table-responsive">
+                <table id="tablaArticulos" class="table table-striped">
+                    <thead class='bg-secondary text-white'>
                         <tr>
-                            <td class="h5 pt-5">
-                                <div class="d-flex justify-content-center"><strong>{{ $articulo->id }}</strong></div>
-                            </td>
-                            <td><img src="<?php $ruta = "img/articulos/{$articulo->foto}.png"; echo $ruta; ?>" alt="caratula"></td>
-                            <td class="h5 pt-5">{{ $articulo->nombre }}</td>
-                            <td class="h5 pt-5">{{ $articulo->artista }}</td>
-                            <td class="text-nowrap h5 pt-5">{{ $articulo->categoria }}</td>
-                            <td class="text-nowrap h5 pt-5">{{ $articulo->precio }}</td>
-                            <td class="text-nowrap h5 pt-5">{{ $articulo->stock }}</td>
-                            <td class="h5 pt-5">
-                                <a class="text-decoration-none" href="{{ route('inventario.edit', ['inventario'=>$articulo->id]) }}">
-                                    <span class="material-icons text-primary">edit</span>
-                                </a>
-                                &nbsp;
-                                <a href="#deleteModal{{$articulo->id}}" data-bs-toggle="modal">
-                                    <span class="material-icons text-danger">delete</span>
-                                </a>
-                            </td>
+                            <th>#</th>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Artista</th>
+                            <th>Categoria</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Acciones</th>
                         </tr>
-
-                        {{-- Delete Warning Modal --}}
-                        <div class="modal fade" id="deleteModal{{$articulo->id}}" tabindex="-1">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Eliminar Artículo</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Se va a eliminar el artículo <b>{{ $articulo->nombre }}</b></p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cancelar</button>
-                                        {{-- Delete Confirm Form --}}
-                                        <form action="{{ route('inventario.destroy', ['inventario'=>$articulo->id]) }}" method="post">
-                                            @method('DELETE')
-                                            @csrf
-                                            <button type="submit" class="btn btn-danger">Eliminar</button>
-                                        </form>
+                    </thead>
+                    <tbody>
+                        @foreach ($inventario as $articulo)
+                            <tr>
+                                <td class="h5 pt-5">
+                                    <div class="d-flex justify-content-center"><strong>{{ $articulo->id }}</strong></div>
+                                </td>
+                                <td><img src="<?php $ruta = "img/articulos/{$articulo->foto}.png"; echo $ruta; ?>" alt="caratula"></td>
+                                <td class="h5 pt-5">{{ $articulo->nombre }}</td>
+                                <td class="h5 pt-5">{{ $articulo->artista }}</td>
+                                <td class="text-nowrap h5 pt-5">{{ $articulo->categoria }}</td>
+                                <td class="text-nowrap h5 pt-5">{{ $articulo->precio }}</td>
+                                <td class="text-nowrap h5 pt-5">{{ $articulo->stock }}</td>
+                                <td class="h5 pt-5">
+                                    <a class="text-decoration-none" href="{{ route('inventario.edit', ['inventario'=>$articulo->id]) }}">
+                                        <span class="material-icons text-primary">edit</span>
+                                    </a>
+                                    &nbsp;
+                                    <a href="#deleteModal{{$articulo->id}}" data-bs-toggle="modal">
+                                        <span class="material-icons text-danger">delete</span>
+                                    </a>
+                                </td>
+                            </tr>
+    
+                            {{-- Delete Warning Modal --}}
+                            <div class="modal fade" id="deleteModal{{$articulo->id}}" tabindex="-1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Eliminar Artículo</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Se va a eliminar el artículo <b>{{ $articulo->nombre }}</b></p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cancelar</button>
+                                            {{-- Delete Confirm Form --}}
+                                            <form action="{{ route('inventario.destroy', ['inventario'=>$articulo->id]) }}" method="post">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                    @endforeach
-                </tbody>
-            </table>
+    
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
 
             @section('js')
                 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
