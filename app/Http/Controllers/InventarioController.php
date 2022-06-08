@@ -109,7 +109,7 @@ class InventarioController extends Controller
         $nombre = $articuloEliminar->nombre;
         $articuloEliminar->delete();
 
-        return view('inventario.articuloGuardado')->with([
+        return view('inventario.articuloModificado')->with([
             'articulo'=>$nombre,
             'operacion'=>'eliminado',
         ]);
