@@ -6,8 +6,8 @@ session_start();
 
 use App\Models\Compra;
 use Illuminate\Http\Request;
-use Transbank\webpay\WebpayPlus;
-use Transbank\webpay\WebpayPlus\Transaction;
+use Transbank\Webpay\WebpayPlus;
+use Transbank\Webpay\WebpayPlus\Transaction;
 
 class TransbankController extends Controller
 {
