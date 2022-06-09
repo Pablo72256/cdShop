@@ -32,10 +32,11 @@ class TransbankController extends Controller
             $total += $valor['precio'] * $valor['cantidad'];
             $pedido = $pedido .implode(",", $valor).'&';
         };
-        
+        $totalRound = round($total , 2) * 1000;
+
         $nueva_compra = new Compra();
         $nueva_compra->session_id = 052022;
-        $nueva_compra->total = $total;
+        $nueva_compra->total = $totalRound;
         $nueva_compra->usuario = auth()->user()->email;
         $nueva_compra->pedido = $pedido;
         $nueva_compra->save();
