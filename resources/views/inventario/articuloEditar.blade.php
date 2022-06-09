@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="row mt-4"> <div class="input-field col-sm-6 text-lg-end">
-                <input type="submit" class="btn btn-primary" value="Enviar" /></div>
+                <input type="submit" class="btn btn-primary" value="Editar" /></div>
                 <div class="input-field col-sm-6 text-lg-start">
                     <input type="reset" class="btn btn-danger" value="Borrar" />
                 </div>

@@ -28,10 +28,11 @@
                 </tr>
             </thead>
             <tbody>
+                <?php $contador = 1;?>
                 @foreach ($articulos as $articulo)
                     <tr>
                         <td class="h5 pt-5">
-                            <div class="d-flex justify-content-center"><strong>{{ $articulo->id }}</strong></div>
+                            <div class="d-flex justify-content-center"><strong>{{ $contador }}</strong></div>
                         </td>
                         <td><img src="<?php $ruta = "img/articulos/{$articulo->foto}.png"; echo $ruta; ?>" alt="caratula"></td>
                         <td class="h5 pt-5">{{ $articulo->nombre }}</td>
@@ -39,11 +40,16 @@
                         <td class="text-nowrap h5 pt-5">{{ $articulo->categoria }}</td>
                         <td class="text-nowrap h5 pt-5">{{ $articulo->precio }}</td>
                         <td class="h5 pt-5">
-                            <form action="{{ route('articulos.show', ['articulo'=>$articulo])}}" method="GET">
-                                <button type="submit" class="btn btn-outline-success" name="añadirArticulo">Añadir al carrito</button>
-                            </form>
+                            @if ($articulo->stock < 1)
+                                Sin stock
+                            @else
+                                <form action="{{ route('articulos.show', ['articulo'=>$articulo])}}" method="GET">
+                                    <button type="submit" class="btn btn-outline-success" name="añadirArticulo">Añadir al carrito</button>
+                                </form>
+                            @endif
                         </td>
                     </tr>
+                    <?php $contador++;?>
                 @endforeach
             </tbody>
         </table>
