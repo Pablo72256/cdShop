@@ -47,7 +47,7 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td colspan="5" class="text-end"><h3>Total: {{ $pedido->total }}€</h3></td>
+                                    <td colspan="5" class="text-end"><h3>Total: {{ $pedido->total }}$</h3></td>
                                 </tr>
                             </tfoot>
                         </table>

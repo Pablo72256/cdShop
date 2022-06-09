@@ -38,7 +38,7 @@
                         <td class="h5 pt-5">{{ $articulo->nombre }}</td>
                         <td class="h5 pt-5">{{ $articulo->artista }}</td>
                         <td class="text-nowrap h5 pt-5">{{ $articulo->categoria }}</td>
-                        <td class="text-nowrap h5 pt-5">{{ $articulo->precio }}</td>
+                        <td class="text-nowrap h5 pt-5">{{ $articulo->precio }}$</td>
                         <td class="h5 pt-5">
                             @if ($articulo->stock < 1)
                                 Sin stock

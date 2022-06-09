@@ -91,7 +91,7 @@ class PedidosController extends Controller
             </table>
             <br/>
             <hr/>
-            <h2 style='text-align: right'>Total: $totalPago €</h2>
+            <h2 style='text-align: right'>Total: $totalPago $</h2>
             <h4 style='text-align: right'>I.V.A incl.</h4>
             <footer style='position: absolute; bottom: 0;'>
                 <p>Para acreditar la validez del presente albarán deberá llevar el sello de la empresa receptora o en su defecto ser firmado por el responsable de la misma.</p>

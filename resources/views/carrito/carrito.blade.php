@@ -62,7 +62,7 @@
                                                     <td class='pt-3'>{{$_SESSION['carrito'][$i]['nombre'] }}</td>
                                                     <td class='pt-3'>{{$_SESSION['carrito'][$i]['artista'] }}</td>
                                                     <td class='pt-3'>{{$_SESSION['carrito'][$i]['categoria'] }}</td>
-                                                    <td class='text-center pt-3'>{{$_SESSION['carrito'][$i]['precio'] }}€</td>
+                                                    <td class='text-center pt-3'>{{$_SESSION['carrito'][$i]['precio'] }}$</td>
 
 
                                                     <td class='text-center pt-3'>
@@ -94,14 +94,14 @@
                                             echo "
                                                 <tr>
                                                     <th colspan='5'>Total</th>
-                                                    <th>0€</th>
+                                                    <th>0$</th>
                                                 </tr>
                                             ";
                                         }else{
                                             echo "
                                                 <tr>
                                                     <th colspan='5'><h4>Total</h4></th>
-                                                    <th><h4>$total €</h4> </th>
+                                                    <th><h4>$total $</h4> </th>
                                                 </tr>
                                             ";
                                         }
@@ -125,11 +125,11 @@
                                 <tbody>
                                     <tr>
                                         <td>Subtotal</td>
-                                        <th><h5><?php echo $total;?>€</h5></th>
+                                        <th><h5><?php echo $total;?>$</h5></th>
                                     </tr>
                                     <tr>
                                         <td>Envio</td>
-                                        <th><h5>0.00€</h5></th>
+                                        <th><h5>0.00$</h5></th>
                                     </tr>
                                     <tr class="total">
                                         <td>Total</td>
@@ -137,7 +137,7 @@
                                             <?php
                                                 $total += 0.00;
                                                 echo $total;
-                                            ?>€
+                                            ?>$
                                         </h5></th>
                                     </tr>
                                     <tr>
