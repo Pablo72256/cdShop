@@ -33,7 +33,7 @@
             <div class="card col-12 col-sm-7 col-lg-3 m-3">
                 <div class="card-body">
                     <h5 class="card-title"><u>Historia</u></h5>
-                    <p class="card-text">En 1947 comenzamos nuestra andadura en la zona de la Palomera con una pequeña tienda de vinilos que año tras año y gracias a un trato diferenciado hacia nuestros clientes ha ido creciendo y se ha podido convertir en la tienda que todo gran amante de la música quiere tener en su ciudad.</p>
+                    <p class="card-text">En 1947 comenzamos nuestra andadura en la zona de la Palomera con una pequeña tienda de vinilos, que año tras año y gracias a un trato diferenciado hacia nuestros clientes ha ido creciendo y se ha podido convertir en la tienda que todo gran amante de la música quiere tener en su ciudad.</p>
                     <div class="text-center">
                         <a href="{{ route('nosotros') }}" class="btn btn-outline-primary">Nuestra historia</a>
                     </div>
