@@ -12,7 +12,7 @@
         
         <div class="col-12 col-sm-7 col-lg-4 d-flex align-items-center">
             <div class="card-body">
-                <h5 class="card-title">CDShop</h5>
+                <h5 class="card-title">CDShop &copy;</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Formas de contacto</h6>
                 <p class="card-text pt-3"><span class="material-icons text-black">place</span><strong> Dirección</strong>: Calle Carmen, 8-10 24001 León</p>
                 <p class="card-text pt-1"><span class="material-icons text-black">mail</span><strong> Correo</strong>: cdShop@gmail.com</p>

@@ -24,7 +24,7 @@
                 <h5 class="card-title">Generaciones</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Con la tercera generación de libreros</h6>
                 <p class="card-text pt-3">A día de hoy el nieto de Juan Riuz Labrada, quien inició todo esto, es quien lleva la tienda a día de hoy, sin embargo la cuarta generación está en camino y os la podreis encontrar en algunas ocasiones atendiendo.</p>
-                <p class="card-text pt-3">Manteniendo la filosofía desde el inicio, aquella que nos ha llevado a crecer de forma constante y sólida todo este tiempo. Somos una tienda no solo virtual sino que también una tienda física y con trato personalizado y especializado, por lo que como siempre estamos abiertos a consultas y sugerencias</p>
+                <p class="card-text pt-3">Manteniendo la filosofía desde el inicio, aquella que nos ha llevado a crecer de forma constante y sólida todo este tiempo. Somos una tienda no solo virtual sino que también una tienda física y con trato personalizado y especializado, por lo que como siempre estamos abiertos a consultas y sugerencias.</p>
             </div>
         </div>
         <div class="col-12 col-sm-7 col-lg-4 d-flex align-items-center">
