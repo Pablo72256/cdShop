@@ -20,7 +20,6 @@
     <h1 class="text-center">Bienvenido a CDShop</h1>
     <hr/>
     <div class="row pt-2 d-flex justify-content-center">
-
             <div class="card col-12 col-sm-7 col-lg-3 m-3">
                 <img class="card-img-top" src="{{URL::asset('img/inicio/inicioCDs.jpg')}}" alt="imagen_tarjeta">
                 <div class="card-body">
