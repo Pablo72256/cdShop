@@ -18,6 +18,7 @@ use App\Http\Controllers\PedidosController;
 */
 
 Auth::routes();
+Route::get('/crearAdminApp', [App\Http\Controllers\InicioController::class, 'crearAdmin'])->name('crearAdmin');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

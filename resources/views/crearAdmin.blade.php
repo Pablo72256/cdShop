@@ -46,6 +46,7 @@
 
                             <div class="col-md-6">
                                 <select class="form-control" name="type">
+                                    <option value="admin">Administrador</option>
                                     <option value="usuario">Usuario</option>
                                 </select>
                             </div>

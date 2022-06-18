@@ -18,4 +18,8 @@ class InicioController extends Controller
     {
         return view('contacto');
     }
+    public function crearAdmin()
+    {
+        return view('crearAdmin');
+    }
 }
