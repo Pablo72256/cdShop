@@ -25,12 +25,6 @@
                     </div>
                     <div class="row mt-4">
                         <div class="input-field col-sm-12">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" id="email" class="form-control" value="{{ old('email') ? : $usuario->email }}" disabled/>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="input-field col-sm-12">
                             <label for="address">Dirección</label>
                             <input type="text" name="address" id="address" class="form-control" value="{{ old('address') ? : $usuario->address }}"/>
                         </div>
@@ -39,6 +33,25 @@
                         <div class="input-field col-sm-12">
                             <label for="pay">Método de pago</label>
                             <input type="text" name="pay" id="pay" class="form-control" value="Transbank" disabled/>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="input-field col-sm-12">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" class="form-control" value="{{ old('email') ? : $usuario->email }}" disabled/>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <label for="isContraseña" class="text-center fst-italic text-danger">*Rellene los siguientes campos solo si desea cambiar la contraseña</label>
+                        <div class="input-field col-sm-12">
+                            <label for="password">Contraseña actual</label>
+                            <input type="password" name="password" id="password" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="input-field col-sm-12">
+                            <label for="newPassword">Nueva contraseña</label>
+                            <input type="password" name="newPassword" id="newPassword" class="form-control"/>
                         </div>
                     </div>
                     <div class="row mt-4 d-flex justify-content-end">

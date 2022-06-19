@@ -8,6 +8,11 @@
                 <strong>Cuenta modificada correctamente</strong>, en breves recibiras un email en tu cuenta con los cambios.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+        @elseif ($usuarioEditado == "Contraseñas no coinciden")
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error modificar la cuenta</strong>, la contraseña actual no coincide con la suya.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         @else
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error modificar la cuenta</strong>, por favor vuelva a intentarlo.

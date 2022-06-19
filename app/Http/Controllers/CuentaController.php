@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class CuentaController extends Controller
 {
@@ -70,14 +71,24 @@ class CuentaController extends Controller
      */
     public function update(Request $request, $cuentum)
     {
+        $notificacion = "Usuario modificado";
+
         $usuarioEditado = User::find($cuentum);
         $usuarioEditado->name = $request->name;
         $usuarioEditado->last_name = $request->last_name;
         $usuarioEditado->address = $request->address;
 
+        if($request->password != '' && $request->newPassword != ''){
+            if(Hash::check($request->password , $usuarioEditado->password)){
+                $usuarioEditado->password = bcrypt($request->newPassword);
+            }else{
+                $notificacion = "Contraseñas no coinciden";
+            }
+        }
+        
         $usuarioEditado->save();
 
-       return view('inicio')->with(['usuarioEditado'=>"Usuario modificado"]);
+        return view('inicio')->with(['usuarioEditado'=>$notificacion]);
     }
 
     /**
