@@ -36,8 +36,15 @@ class InventarioController extends Controller
      */
     public function store(Request $request)
     {
+
+        $data = file_get_contents($request->form_foto);
+        $base64 = 'data:image/jpg;base64,' . base64_encode($data);
+        
+        // echo "<img src='$base64'/>";
+        
+        
         Articulo::create([
-            'foto' => $request->form_foto,
+            'foto' => $base64,
             'nombre' => $request->form_nombre,
             'artista' => $request->form_artista,
             'stock' => $request->form_stock,

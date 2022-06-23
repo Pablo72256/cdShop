@@ -3,13 +3,13 @@
     <h1>Gestión de inventario</h1>
     <hr/>
     <div class="container-fluid px-5">
-        <form action="{{ route('inventario.store') }}" method="post">
+        <form action="{{ route('inventario.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <legend>Nuevo Artítulo</legend>
             <div class="row mt-4">
                 <div class="input-field col-sm-12">
                     <label for="form_foto">Nombre de la foto</label>
-                    <input type="text" name="form_foto" id="form_foto" class="form-control" required/>
+                    <input type="file" name="form_foto" id="form_foto" class="form-control" accept="image/jpg" required/>
                 </div>
             </div>
             <div class="row mt-4">

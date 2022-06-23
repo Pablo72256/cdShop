@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('articulos', function (Blueprint $table) {
             $table->id();
-            $table->string('foto', 25);
+            $table->text('foto');
             $table->string('nombre', 50)->unique();
             $table->string('artista', 25);
             $table->integer('stock')->unsigned();

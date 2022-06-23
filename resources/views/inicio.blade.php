@@ -27,12 +27,11 @@
 
     <?php $contador = 1;?>
     <div class="row pt-2 d-flex justify-content-center">
-        
         @foreach ($articulos as $articulo)
             @if ($contador <= 15)
                 <div class="col-8 col-xl-2 col-lg-3 col-md-3 col-sm-4 m-2">
                     <div class="card-img-top d-flex justify-content-center">
-                        <img class="w-75" src="<?php $ruta = "img/articulos/{$articulo->foto}.png"; echo $ruta; ?>" alt="caratula">
+                        <img class="w-75" src="<?php echo $articulo->foto ?>" alt="caratula">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center"><u>{{ $articulo->nombre }}</u></h5>
@@ -47,8 +46,7 @@
             @endif    
         @endforeach
     </div>
-        <hr class="mt-4"/>
-    </div>
 
+    <hr class="mt-4"/>
 
 @endsection
