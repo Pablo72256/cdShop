@@ -33,7 +33,7 @@
                                 <td class="h5 pt-5">
                                     <div class="d-flex justify-content-center"><strong>{{ $articulo->id }}</strong></div>
                                 </td>
-                                <td><?php echo "<img src='$articulo->foto' alt='Caratula'/>" ?></td>
+                                <td><?php echo "<img src='$articulo->foto' width='100px' height='100px' alt='Caratula'/>" ?></td>
                                 <td class="h5 pt-5">{{ $articulo->nombre }}</td>
                                 <td class="h5 pt-5">{{ $articulo->artista }}</td>
                                 <td class="text-nowrap h5 pt-5">{{ $articulo->categoria }}</td>
