@@ -22,40 +22,30 @@
         
     @endif
 
-    <h1 class="text-center">Bienvenido a CDShop</h1>
+    <h1 class="text-center">Quizá te interese...</h1>
     <hr/>
-    <div class="row pt-2 d-flex justify-content-center">
-            <div class="card col-12 col-sm-7 col-lg-3 m-3">
-                <img class="card-img-top" src="{{URL::asset('img/inicio/inicioCDs.jpg')}}" alt="imagen_tarjeta">
-                <div class="card-body">
-                    <h5 class="card-title"><u>CD´s</u></h5>
-                    <p class="card-text">Dentro de nuestra página web podras acceder a un amplio catalogo para adquirir los CD´s que más te gusten, además podrás encontrar colecciones de los mejores éxitos y por supuesto una gran variada de vinilos, que desearás tener en tu casa.</p>
-                    <div class="text-center">
-                        <a href="{{ url('/articulos') }}" class="btn btn-outline-primary">Catálogo de CD´s</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-7 col-lg-3 m-3">
-                <div class="card-body">
-                    <h5 class="card-title"><u>Historia</u></h5>
-                    <p class="card-text">En 1947 comenzamos nuestra andadura en la zona de la Palomera con una pequeña tienda de vinilos, que año tras año y gracias a un trato diferenciado hacia nuestros clientes ha ido creciendo y se ha podido convertir en la tienda que todo gran amante de la música quiere tener en su ciudad.</p>
-                    <div class="text-center">
-                        <a href="{{ route('nosotros') }}" class="btn btn-outline-primary">Nuestra historia</a>
-                    </div>
 
-                </div>
-                <img class="card-img-bottom" src="{{URL::asset('img/inicio/inicioColecion.jpg')}}" alt="imagen_tarjeta">
-            </div>
-            <div class="card col-12 col-sm-7 col-lg-3 m-3">
-                <img class="card-img-top" src="{{URL::asset('img/inicio/inicioVinilos.jpg')}}" alt="imagen_tarjeta">
-                <div class="card-body">
-                    <h5 class="card-title"><u>Contáctanos</u></h5>
-                    <p class="card-text">Dentro de nuestra web podras acceder a un amplio catalogo para adquirir el CD que más te guste para poder adquirirlo en el momento y elegir si quieres que te lo lleven a casa, si no estremos encantados de que vengas a recoger tu pedido a nuestra tienda, donde además te resolveremos cualquier duda.</p>
-                    <div class="text-center">
-                        <a href="{{ route('contacto') }}" class="btn btn-outline-primary">Contáctanos</a>
+    <?php $contador = 1;?>
+    <div class="row pt-2 d-flex justify-content-center">
+        @if ($contador <= 8)
+            @foreach ($articulos as $articulo)
+                <div class="col-8 col-xl-2 col-lg-3 col-md-3 col-sm-4 m-2">
+                    <div class="card-img-top d-flex justify-content-center">
+                        <img class="w-75" src="<?php $ruta = "img/articulos/{$articulo->foto}.png"; echo $ruta; ?>" alt="caratula">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><u>{{ $articulo->nombre }}</u></h5>
+                        <h6 class="card-title text-center">{{ $articulo->artista }}</h6>
+                        <h6 class="card-title text-center">{{ $articulo->precio }}$</h6>
+                        <div class="text-center">
+                            <a href="{{ url('/articulos') }}" class="btn btn-outline-primary btn-sm">VER</a>
+                        </div>
                     </div>
                 </div>
-        </div>
+                <?php $contador++;?>
+            @endforeach
+        @endif
+    </div>
         <hr class="mt-4"/>
     </div>
 

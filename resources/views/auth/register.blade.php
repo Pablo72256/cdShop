@@ -41,13 +41,9 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="type" class="col-md-4 col-form-label text-md-end">Tipo de usuario</label>
-
-                            <div class="col-md-6">
-                                <select class="form-control" name="type">
-                                    <option value="usuario">Usuario</option>
-                                </select>
+                        <div>
+                            <div>
+                                <input type="hidden" name="type"value="usuario"/>
                             </div>
                         </div>
 
