@@ -27,8 +27,9 @@
 
     <?php $contador = 1;?>
     <div class="row pt-2 d-flex justify-content-center">
-        @if ($contador <= 8)
-            @foreach ($articulos as $articulo)
+        
+        @foreach ($articulos as $articulo)
+            @if ($contador <= 15)
                 <div class="col-8 col-xl-2 col-lg-3 col-md-3 col-sm-4 m-2">
                     <div class="card-img-top d-flex justify-content-center">
                         <img class="w-75" src="<?php $ruta = "img/articulos/{$articulo->foto}.png"; echo $ruta; ?>" alt="caratula">
@@ -43,8 +44,8 @@
                     </div>
                 </div>
                 <?php $contador++;?>
-            @endforeach
-        @endif
+            @endif    
+        @endforeach
     </div>
         <hr class="mt-4"/>
     </div>
