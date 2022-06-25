@@ -4,14 +4,16 @@
     <hr/>
 
     <div class="container-fluid px-5">
-        <form action="{{ route('inventario.update', ['inventario'=>$articulo]) }}" method="post">
+        <form action="{{ route('inventario.update', ['inventario'=>$articulo]) }}" method="post" enctype="multipart/form-data">
             @method('PUT')
             @csrf
-            <legend>Nuevo Artítulo</legend>
+            <legend>Editar Artítulo</legend>
             <div class="row mt-4">
+                <label for="isfoto" class="text-center fst-italic text-danger">*Añade una foto nueva si deseas modificar la antigua.</label>
                 <div class="input-field col-sm-12">
-                    <label for="foto">Nombre de la foto</label>
-                    <input type="text" name="foto" id="foto" class="form-control" value="{{ old('foto') ? : $articulo->foto }}"/>
+                    <label for="form_foto">Foto</label>
+                    <input type="file" name="form_foto" id="form_foto" class="form-control" accept="image/jpg"/>
+                    <input type="hidden" name="form_foto_old" value="{{ $articulo->foto }}">
                 </div>
             </div>
             <div class="row mt-4">

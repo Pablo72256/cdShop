@@ -88,8 +88,15 @@ class InventarioController extends Controller
      */
     public function update(Request $request, $articulo)
     {
+        if(!$request->form_foto){
+            $base64 = $request->form_foto_old;
+        }else{
+            $data = file_get_contents($request->form_foto);
+            $base64 = 'data:image/jpg;base64,' . base64_encode($data);
+        }
+        
         $articuloEditado = Articulo::find($articulo);
-        $articuloEditado->foto = $request->foto;
+        $articuloEditado->foto = $base64;
         $articuloEditado->nombre = $request->nombre;
         $articuloEditado->artista = $request->artista;
         $articuloEditado->stock = $request->stock;

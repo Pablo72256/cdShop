@@ -31,7 +31,7 @@
             @if ($contador <= 15)
                 <div class="col-8 col-xl-2 col-lg-3 col-md-3 col-sm-4 m-2">
                     <div class="card-img-top d-flex justify-content-center">
-                        <img class="w-75" src="<?php echo $articulo->foto ?>" alt="caratula">
+                        <img src="<?php echo $articulo->foto ?>" width="120px" height="120px" alt="caratula">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center"><u>{{ $articulo->nombre }}</u></h5>

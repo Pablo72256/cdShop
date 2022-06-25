@@ -8,7 +8,7 @@
             <legend>Nuevo Artítulo</legend>
             <div class="row mt-4">
                 <div class="input-field col-sm-12">
-                    <label for="form_foto">Nombre de la foto</label>
+                    <label for="form_foto">Foto</label>
                     <input type="file" name="form_foto" id="form_foto" class="form-control" accept="image/jpg" required/>
                 </div>
             </div>
